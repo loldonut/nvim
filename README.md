@@ -23,6 +23,16 @@
 - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
 
-## Theme
+## Themes 
 
-[**gruvbox-baby**](https://github.com/luisiacc/gruvbox-baby)
+Current using:
+
+- [**nightfox.nvim**](https://github.com/EdenEast/nightfox.nvim)
+
+### Other Themes
+
+- [gruvbox](https://github.com/morhetz/gruvbox)
+- [jellybeans.vim](https://github.com/nanotech/jellybeans.vim)
+- [gruvbox-baby](https://github.com/luisiacc/gruvbox-baby)
+- [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)

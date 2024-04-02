@@ -24,5 +24,5 @@ vim.opt.updatetime = 50
 vim.opt.termguicolors = true
 
 -- GRUV BOX
-vim.cmd[[ colorscheme gruvbox-baby ]]
+vim.cmd[[ colorscheme nightfox ]]
 vim.cmd[[ syntax on ]]

@@ -9,9 +9,13 @@ return require('packer').startup(function(user)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use 'morhetz/gruvbox'
-    -- use 'nanotech/jellybeans.vim'
-    use('luisiacc/gruvbox-baby', { branch = 'main' })
+    -- Themes
+    use 'morhetz/gruvbox' -- gruvbox
+    use 'nanotech/jellybeans.vim' -- jellybeans
+    use('luisiacc/gruvbox-baby', { branch = 'main' }) -- gruvbox-baby
+    use 'rebelot/kanagawa.nvim' -- kanagawa
+    use 'folke/tokyonight.nvim' -- tokyonight
+    use 'EdenEast/nightfox.nvim' -- nightfox
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('tpope/vim-fugitive')
