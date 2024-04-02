@@ -2,6 +2,8 @@
 
 ## Packages
 
+uses [packer.nvim](https://github.com/wbthomason/packer.nvim)
+
 (excluding the theme)
 
 - [telescope](https://github.com/nvim-telescope/telescope.vim)
