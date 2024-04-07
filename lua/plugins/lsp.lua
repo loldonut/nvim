@@ -23,7 +23,11 @@ return {
         require("fidget").setup()
         require("mason").setup()
 
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local capabilities = vim.tbl_deep_extend(
+            "force",
+            vim.lsp.protocol.make_client_capabilities(),
+            require("cmp_nvim_lsp").default_capabilities()
+        )
 
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -59,6 +63,7 @@ return {
             capabilities = capabilities,
         })
 
+        -- TODO: Maybe make a file that resolves augroups/autocmd?
         vim.api.nvim_create_autocmd("LspAttach", {
             group = vim.api.nvim_create_augroup('UserLspConfig', {}),
             callback = function(ev)
