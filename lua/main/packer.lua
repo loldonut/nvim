@@ -1,4 +1,4 @@
-vim.cmd [[ packadd packer.nvim ]]
+--[[
 
 return require('packer').startup(function(user)
     use 'wbthomason/packer.nvim'
@@ -45,8 +45,8 @@ return require('packer').startup(function(user)
         end
     }
 
-    use 'mattn/emmet-vim'
     use 'nvim-tree/nvim-web-devicons'
 
     use 'christoomey/vim-tmux-navigator'
 end)
+--]]
