@@ -9,10 +9,6 @@ return require('packer').startup(function(user)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('tpope/vim-fugitive')
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -33,8 +29,6 @@ return require('packer').startup(function(user)
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
 
-    use 'nvim-lualine/lualine.nvim'
-
     use 'nvimtools/none-ls.nvim'
     use 'MunifTanjim/prettier.nvim'
 
@@ -52,12 +46,6 @@ return require('packer').startup(function(user)
     }
 
     use 'mattn/emmet-vim'
-    use {
-        'numToStr/Comment.nvim',
-        config = function ()
-            require('Comment').setup()
-        end
-    }
     use 'nvim-tree/nvim-web-devicons'
 
     use 'christoomey/vim-tmux-navigator'
