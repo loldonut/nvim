@@ -4,10 +4,22 @@ local group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = false 
 local event = "BufWritePre" -- or "BufWritePost"
 local async = event == "BufWritePost"
 
+local builtins = null_ls.builtins
+
 null_ls.setup({
+    sources = {
+        builtins.formatting.prettierd.with({
+            extra_args = {
+                "--single-quote",
+                "--tab-width=4",
+                "--quote-props=as-needed",
+                "--trailing-comma=all"
+            }
+        })
+    },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
-            vim.keymap.set("n", "<leader>fp", function()
+            vim.keymap.set("n", "<Leader>f", function()
                 vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
             end, { buffer = bufnr, desc = "[lsp] format" })
 
@@ -24,7 +36,7 @@ null_ls.setup({
         end
 
         if client.supports_method("textDocument/rangeFormatting") then
-            vim.keymap.set("n", "<leader>fs", function()
+            vim.keymap.set("x", "<Leader>f", function()
                 vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
             end, { buffer = bufnr, desc = "[lsp] format" })
         end

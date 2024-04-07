@@ -42,7 +42,7 @@ return require('packer').startup(function(user)
 
     use 'nvim-lualine/lualine.nvim'
 
-    use 'jose-elias-alvarez/null-ls.nvim'
+    use 'nvimtools/none-ls.nvim'
     use 'MunifTanjim/prettier.nvim'
 
     use 'hrsh7th/cmp-path'
