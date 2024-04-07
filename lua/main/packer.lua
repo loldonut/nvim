@@ -44,9 +44,5 @@ return require('packer').startup(function(user)
             require('nvim-autopairs').setup {}
         end
     }
-
-    use 'nvim-tree/nvim-web-devicons'
-
-    use 'christoomey/vim-tmux-navigator'
 end)
 --]]
