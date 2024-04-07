@@ -2,7 +2,7 @@
 
 ## Packages
 
-uses [packer.nvim](https://github.com/wbthomason/packer.nvim)
+uses [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 (excluding the theme)
 
