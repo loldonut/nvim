@@ -1,5 +1,10 @@
 # Neovim Config
 
+- [Packages](#packages)
+- [Themes](#themes)
+
+- [TODO List](TODO.md)
+
 ## Packages
 
 uses [lazy.nvim](https://github.com/folke/lazy.nvim)
