@@ -62,6 +62,9 @@ return {
             },
             capabilities = capabilities,
         })
+        require("lspconfig").rust_analyzer.setup({
+            capabilities = capabilities,
+        })
 
         -- TODO: Maybe make a file that resolves augroups/autocmd?
         vim.api.nvim_create_autocmd("LspAttach", {
