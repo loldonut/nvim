@@ -100,6 +100,7 @@ return {
                 { name = "vsnip" },
                 { name = "luasnip" },
                 { name = "buffer" },
+                { name = "path" },
             }),
         })
     end
