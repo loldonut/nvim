@@ -23,6 +23,7 @@ uses [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator)
+- [cloak.nvim](https://github.com/laytan/cloak.nvim)
 
 ## Themes 
 
