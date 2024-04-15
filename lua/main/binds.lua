@@ -17,3 +17,10 @@ vim.keymap.set("n", '<C-u>', '<C-u>zz')
 vim.keymap.set("n", "<leader>fd", "d2f/")
 vim.api.nvim_set_keymap('n', "<leader>fc", 'gcc', { noremap = false })
 vim.api.nvim_set_keymap('v', '<leader>fc', 'gcc', { noremap = false })
+
+-- Clear trailing spaces
+vim.api.nvim_create_autocmd({"BufWrite", "BufWritePre"}, {
+    callback = function()
+        vim.cmd[[ :%s/\s\+$//e ]]
+    end
+})
