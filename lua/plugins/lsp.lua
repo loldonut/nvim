@@ -77,6 +77,7 @@ return {
                 vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                 vim.keymap.set("n", "<leader>dr", vim.lsp.buf.rename, opts)
                 vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+                vim.keymap.set("n", "<leader>rd", vim.lsp.buf.rename, opts)
             end,
         })
 
