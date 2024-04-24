@@ -10,8 +10,11 @@ return {
       cloak_telescope = true,
       patterns = {
         {
-          file_pattern = ".env*",
-          cloak_pattern = "=.+",
+          file_pattern = ".env*,config.json",
+          cloak_pattern = {
+            "=.+",
+            { ":.+" },
+          },
           replace = nil,
         },
       },
