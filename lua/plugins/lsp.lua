@@ -16,12 +16,37 @@ return {
     "hrsh7th/vim-vsnip",
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
+    "rafamadriz/friendly-snippets",
 
     "j-hui/fidget.nvim",
   },
   config = function()
     require("fidget").setup()
     require("mason").setup()
+
+    local cmp = require("cmp")
+
+    cmp.setup({
+      snippet = {
+        expand = function(args)
+          require("luasnip.loaders.from_vscode").lazy_load()
+          require("luasnip").lsp_expand(args.body)
+        end,
+      },
+      mapping = cmp.mapping.preset.insert({
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<C-e>"] = cmp.mapping.abort(),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      }),
+      sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
+      }),
+    })
 
     local capabilities = vim.tbl_deep_extend(
       "force",
@@ -79,32 +104,6 @@ return {
         vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
         vim.keymap.set("n", "<leader>rd", vim.lsp.buf.rename, opts)
       end,
-    })
-
-    local cmp = require("cmp")
-
-    require("luasnip.loaders.from_vscode").lazy_load()
-
-    cmp.setup({
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      },
-      mapping = cmp.mapping.preset.insert({
-        ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<C-e>"] = cmp.mapping.abort(),
-        ["<C-Space>"] = cmp.mapping.complete(),
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-      }),
-      sources = cmp.config.sources({
-        { name = "nvim_lsp" },
-        { name = "vsnip" },
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "path" },
-      }),
     })
   end,
 }
