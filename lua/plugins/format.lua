@@ -10,6 +10,7 @@ return {
         python = { "black" },
         javascript = javascript,
         typescript = javascript,
+        go = { "gofmt" },
       },
       formatters = {
         prettierd = {
@@ -25,20 +26,13 @@ return {
       notify_on_error = false,
     })
 
-    require("conform").formatters.injected = {
-      options = {
-        ignore_errors = true,
-        lang_to_formatters = {
-          json = { "jq" },
-        },
-      },
-    }
-
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",
       callback = function(args)
         local disable_filetypes = {
           html = true,
+          json = true,
+          c = true,
         }
 
         local filetype = vim.bo[args.buf].filetype

@@ -4,6 +4,7 @@ return {
   "nvim-tree/nvim-web-devicons",
   "mattn/emmet-vim",
   "tpope/vim-sleuth",
+  "fatih/vim-go",
   {
     "numToStr/Comment.nvim",
     config = function()

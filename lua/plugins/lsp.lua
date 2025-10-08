@@ -54,19 +54,20 @@ return {
       require("cmp_nvim_lsp").default_capabilities()
     )
 
+    local language_servers = {
+      "ts_ls",
+      "pyright",
+      "eslint",
+      "html",
+      "jsonls",
+      "clangd"
+    }
+
     require("mason-lspconfig").setup({
-      ensure_installed = {
-        "tsserver",
-        "pyright",
-        "eslint",
-        "html",
-        "jsonls",
-      },
+      ensure_installed = language_servers,
       handlers = {
         function(server_name)
-          require("lspconfig")[server_name].setup({
-            capabilities = capabilities,
-          })
+          vim.lsp.enable(server_name)
         end,
       },
     })
@@ -74,10 +75,10 @@ return {
     -- TODO: Use handlers
     -- Clangd and LuaLS currently does not support termux
     -- so I have to manually set this up
-    require("lspconfig").clangd.setup({
+   vim.lsp.config("clangd", {
       capabilities = capabilities,
     })
-    require("lspconfig").lua_ls.setup({
+    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
           diagnostics = {
@@ -87,8 +88,12 @@ return {
       },
       capabilities = capabilities,
     })
-    require("lspconfig").rust_analyzer.setup({
+    vim.lsp.config("rust_analyzer", {
       capabilities = capabilities,
+    })
+
+    vim.lsp.enable("lua_ls", {
+      capabilities = capabilities
     })
 
     -- TODO: Maybe make a file that resolves augroups/autocmd?
