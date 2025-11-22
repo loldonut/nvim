@@ -1,17 +1,15 @@
 return {
-  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason.nvim",
-    "neovim/nvim-lspconfig",
+    "mason-org/mason.nvim",
+    "mason-org/mason-lspconfig.nvim",
 
-    -- cmp
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
     "hrsh7th/nvim-cmp",
 
-    -- cmp snips
     "hrsh7th/cmp-vsnip",
     "hrsh7th/vim-vsnip",
     "L3MON4D3/LuaSnip",
@@ -60,7 +58,6 @@ return {
       "eslint",
       "html",
       "jsonls",
-      "clangd"
     }
 
     require("mason-lspconfig").setup({
@@ -75,7 +72,7 @@ return {
     -- TODO: Use handlers
     -- Clangd and LuaLS currently does not support termux
     -- so I have to manually set this up
-   vim.lsp.config("clangd", {
+    vim.lsp.enable("clangd", {
       capabilities = capabilities,
     })
     vim.lsp.config("lua_ls", {
@@ -93,7 +90,7 @@ return {
     })
 
     vim.lsp.enable("lua_ls", {
-      capabilities = capabilities
+      capabilities = capabilities,
     })
 
     -- TODO: Maybe make a file that resolves augroups/autocmd?

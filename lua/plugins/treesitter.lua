@@ -7,6 +7,7 @@ return {
         "typescript",
         "lua",
         "c",
+        "cpp",
         "vim",
         "vimdoc",
       },

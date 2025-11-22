@@ -20,5 +20,4 @@ vim.opt.updatetime = 50
 -- TRUE COLOR SUPPORT
 vim.opt.termguicolors = true
 
--- GRUV BOX
 vim.cmd([[ syntax on ]])
