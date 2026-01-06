@@ -93,6 +93,10 @@ return {
       capabilities = capabilities,
     })
 
+    vim.lsp.enable("gopls", {
+      capabilities = capabilities,
+    })
+
     -- TODO: Maybe make a file that resolves augroups/autocmd?
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
