@@ -1,46 +1,46 @@
 return {
-  "nvim-telescope/telescope.nvim",
+  'nvim-telescope/telescope.nvim',
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    "BurntSushi/ripgrep",
+    'nvim-lua/plenary.nvim',
+    'BurntSushi/ripgrep',
     {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'make',
     },
   },
-  tag = "v0.1.9",
+  tag = 'v0.1.9',
   config = function()
-    local builtin = require("telescope.builtin")
+    local builtin = require('telescope.builtin')
 
-    vim.keymap.set("n", "<leader>pf", function ()
-        builtin.find_files({
-            no_ignore = true,
-            hidden = true,
-        })
+    vim.keymap.set('n', '<leader>pf', function()
+      builtin.find_files({
+        no_ignore = true,
+        hidden = true,
+      })
     end, {})
-    vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-    vim.keymap.set("n", "<leader>fd", builtin.buffers, {})
-    vim.keymap.set("n", "<leader>ps", function()
+    vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+    vim.keymap.set('n', '<leader>fd', builtin.buffers, {})
+    vim.keymap.set('n', '<leader>ps', function()
       builtin.grep_string({
-        search = vim.fn.input("Grep > "),
+        search = vim.fn.input('Grep > '),
       })
     end)
 
-    vim.keymap.set("n", "<leader>pd", builtin.lsp_references, {})
+    vim.keymap.set('n', '<leader>pd', builtin.lsp_references, {})
 
-    require("telescope").setup({
+    require('telescope').setup({
       extensions = {
         fzf = {
           fuzzy = true,
           override_generic_sorter = true,
           override_file_sorter = true,
-          case_mode = "smart_case",
+          case_mode = 'smart_case',
         },
       },
       defaults = {
         file_ignore_patterns = {
-          "node_modules",
-          ".git",
+          'node_modules',
+          '.git',
         },
       },
       pickers = {
@@ -50,13 +50,13 @@ return {
           previewer = false,
           mappings = {
             i = {
-              ["<c-d>"] = "delete_buffer",
+              ['<c-d>'] = 'delete_buffer',
             },
           },
         },
       },
     })
 
-    require("telescope").load_extension("fzf")
+    require('telescope').load_extension('fzf')
   end,
 }

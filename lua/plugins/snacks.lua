@@ -1,9 +1,9 @@
 return {
-  "folke/snacks.nvim",
+  'folke/snacks.nvim',
   priority = 1000,
   lazy = false,
   dependencies = {
-    "nvim-mini/mini.icons",
+    'nvim-mini/mini.icons',
   },
   opts = {
     bigfile = { enabled = true },
@@ -12,6 +12,6 @@ return {
     dashboard = { enabled = true },
   },
   config = function(_, opts)
-    require("snacks").setup(opts)
+    require('snacks').setup(opts)
   end,
 }

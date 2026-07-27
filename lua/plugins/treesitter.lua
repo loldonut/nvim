@@ -1,15 +1,15 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
+  'nvim-treesitter/nvim-treesitter',
   config = function()
-    require("nvim-treesitter.config").setup({
+    require('nvim-treesitter.config').setup({
       ensure_installed = {
-        "javascript",
-        "typescript",
-        "lua",
-        "c",
-        "cpp",
-        "vim",
-        "vimdoc",
+        'javascript',
+        'typescript',
+        'lua',
+        'c',
+        'cpp',
+        'vim',
+        'vimdoc',
       },
       sync_installed = false,
       auto_install = true,

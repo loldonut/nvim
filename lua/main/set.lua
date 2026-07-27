@@ -8,7 +8,7 @@ vim.opt.shiftwidth = 4
 vim.opt.smarttab = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 
 vim.opt.smartindent = true
 
