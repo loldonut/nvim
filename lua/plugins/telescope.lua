@@ -46,6 +46,7 @@ return {
         file_ignore_patterns = {
           'node_modules',
           '.git',
+          'target',
         },
         vimgrep_arguments = vimgrep_arguments,
       },
