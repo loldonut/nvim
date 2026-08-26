@@ -33,8 +33,6 @@ return {
     })
 
     -- TODO: Use handlers
-    -- Clangd and LuaLS currently does not support termux
-    -- so I have to manually set this up
     vim.lsp.enable('clangd', {
       capabilities = capabilities,
     })
@@ -59,6 +57,17 @@ return {
     vim.lsp.enable('gopls', {
       capabilities = capabilities,
     })
+
+    vim.lsp.config('qmlls', {
+      cmd = { 'qmlls6' },
+      filetypes = { 'qml' },
+      on_attach = function(client, bufnr)
+        client.server_capabilities.semanticTokensProvider = nil
+      end,
+      capabilities = capabilities,
+    })
+
+    vim.lsp.enable('qmlls')
 
     -- TODO: Maybe make a file that resolves augroups/autocmd?
     vim.api.nvim_create_autocmd('LspAttach', {
